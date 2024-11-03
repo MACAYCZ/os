@@ -1,0 +1,7 @@
+[package]
+name = "os"
+edition = "2021"
+
+[[bin]]
+name = "kernel"
+path = "kernel/main.rs"
