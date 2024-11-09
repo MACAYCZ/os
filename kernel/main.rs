@@ -13,9 +13,8 @@ fn panic(_info: &PanicInfo) -> ! {
 
 #[no_mangle]
 pub extern "C" fn main() -> ! {
-	let vga = 0xB8000 as *mut u8;
 	unsafe {
-		*vga = b'X';
+		*(0xB8000 as *mut u8) = b'X';
 	}
 	loop {}
 }

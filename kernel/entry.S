@@ -1,4 +1,5 @@
 	.code32
+	.extern main
 
 	.section .multiboot, "a"
 multiboot:
@@ -13,7 +14,6 @@ multiboot:
 	.globl _start
 	.type _start, @function
 _start:
-	mov byte ptr [0xB8000], 'X'
-	hlt
+	call main
 
 	.size _start, . - _start
