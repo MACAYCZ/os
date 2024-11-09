@@ -1,6 +1,8 @@
 #![no_main]
 #![no_std]
 
+mod vga;
+
 use core::arch::global_asm;
 use core::panic::PanicInfo;
 
@@ -13,8 +15,6 @@ fn panic(_info: &PanicInfo) -> ! {
 
 #[no_mangle]
 pub extern "C" fn main() -> ! {
-	unsafe {
-		*(0xB8000 as *mut u8) = b'X';
-	}
+	println!("Hello, World!");
 	loop {}
 }
