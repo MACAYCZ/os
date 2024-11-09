@@ -1,6 +1,6 @@
 	.code32
 
-	.section .multiboot
+	.section .multiboot, "a"
 multiboot:
 	.set multiboot.magic, 0x1badb002
 	.set multiboot.flags, 0x00
@@ -13,4 +13,7 @@ multiboot:
 	.globl _start
 	.type _start, @function
 _start:
+	mov byte ptr [0xB8000], 'X'
 	hlt
+
+	.size _start, . - _start
