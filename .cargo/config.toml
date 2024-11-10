@@ -6,4 +6,4 @@ build-std = ["core", "compiler_builtins"]
 target = "x86.json"
 
 [target.'cfg(all(target_os = "none", target_arch = "x86"))']
-runner = ["qemu-system-i386", "-kernel"]
+runner = ["qemu-system-i386", "-display", "gtk,zoom-to-fit=on,show-menubar=on", "-kernel"]
